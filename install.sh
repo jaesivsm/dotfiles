@@ -4,7 +4,7 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle
 
 git submodule update
 
-for f in cows vimrc bashrc bash_aliases gitconfig gitignore; do
+for f in cows vimrc bashrc bash_aliases profile gitconfig gitignore; do
     rm -rf ~/.$f
     ln -vs $PWD/$f ~/.$f
 done
