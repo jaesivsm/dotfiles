@@ -1,13 +1,13 @@
 #!/bin/bash
-rm -rf ~/.vim ~/.cows ~/.vimrc ~/.bashrc ~/.bash_aliases ~/.bash_prompt
+rm -rf ~/.vim ~/.bash_prompt
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 
 git submodule update
 
-ln -vs $PWD/cows ~/.cows
-ln -vs $PWD/vimrc ~/.vimrc
-ln -vs $PWD/bashrc ~/.bashrc
-ln -vs $PWD/bash_aliases ~/.bash_aliases
+for f in cows vimrc bashrc bash_aliases gitconfig gitignore; do
+    rm -rf ~/.$f
+    ln -vs $PWD/$f ~/.$f
+done
 
 ln -vs $PWD/liquidprompt/liquidprompt ~/.bash_prompt
 ln -vs $PWD/syntastic ~/.vim/bundle/syntastic

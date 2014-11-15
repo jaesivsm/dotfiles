@@ -1,0 +1,17 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	br = branch
+[user]
+	name = François Schmidts
+	email = francois.schmidts@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[push]
+	default = simple
