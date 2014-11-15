@@ -1,13 +1,15 @@
-#!/bin/bash 
+#!/bin/bash
+rm -rf ~/.vim ~/.vimrc ~/.bashrc ~/.bash_aliases ~/.bash_prompt
+mkdir -p ~/.vim/autoload ~/.vim/bundle
 
-BUNDLE=~/.vim/bundle 
-git clone git@github.com:jaesivsm/liquidprompt.git
-cp bashrc ~/.bashrc 
+git submodule update
 
+ln -vs $PWD/vimrc ~/.vimrc
+ln -vs $PWD/bashrc ~/.bashrc
+ln -vs $PWD/bash_aliases ~/.bash_aliases
 
-cp vimrc ~/.vimrc 
-mkdir -p $BUNDLE
-cd $BUNDLE
-git clone https://github.com/scrooloose/syntastic.git
-git clone https://github.com/python-rope/ropevim.git
+ln -vs $PWD/liquidprompt/liquidprompt ~/.bash_prompt
+ln -vs $PWD/syntastic ~/.vim/bundle/syntastic
+#ln -vs $PWD/ropevim ~/.vim/bundle/ropevim
 
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim

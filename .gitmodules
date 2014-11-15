@@ -1,0 +1,9 @@
+[submodule "liquidprompt"]
+	path = liquidprompt
+	url = git@github.com:jaesivsm/liquidprompt.git
+[submodule "ropevim"]
+	path = ropevim
+	url = https://github.com/python-rope/ropevim.git
+[submodule "syntastic"]
+	path = syntastic
+	url = https://github.com/scrooloose/syntastic.git
