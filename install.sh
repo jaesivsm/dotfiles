@@ -1,9 +1,10 @@
 #!/bin/bash
-rm -rf ~/.vim ~/.vimrc ~/.bashrc ~/.bash_aliases ~/.bash_prompt
+rm -rf ~/.vim ~/.cows ~/.vimrc ~/.bashrc ~/.bash_aliases ~/.bash_prompt
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 
 git submodule update
 
+ln -vs $PWD/cows ~/.cows
 ln -vs $PWD/vimrc ~/.vimrc
 ln -vs $PWD/bashrc ~/.bashrc
 ln -vs $PWD/bash_aliases ~/.bash_aliases

@@ -136,5 +136,5 @@ fi
 
 # Greeter
 if [ -x "/usr/games/cowsay" ] && [ -x "/usr/games/fortune" ] && [ -d "$HOME/cows" ]; then
-    /usr/games/cowsay -f ~/cows/$(/bin/ls ~/cows -1 | head -n $(expr $$$(date +%s) % $(/bin/ls ~/cows | wc -w) + 1) | tail -n 1) $(/usr/games/fortune -a)
+    /usr/games/cowsay -f ~/.cows/$(/bin/ls ~/cows -1 | head -n $(expr $$$(date +%s) % $(/bin/ls ~/cows | wc -w) + 1) | tail -n 1) $(/usr/games/fortune -a)
 fi
