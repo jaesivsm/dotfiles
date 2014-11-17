@@ -2,6 +2,7 @@
 rm -rf ~/.vim ~/.bash_prompt
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 
+git submodule init
 git submodule update
 
 for f in cows vimrc bashrc bash_aliases profile gitconfig gitignore; do
