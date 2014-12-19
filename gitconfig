@@ -7,7 +7,8 @@
     co = checkout
     st = status
     br = branch
-    wave = log --oneline --decorate --graph --color
+    wave = log --decorate --graph --color --oneline
+    graph = log --decorate --graph --color
 [user]
     name = François Schmidts
     email = francois.schmidts@gmail.com
