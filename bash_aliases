@@ -27,3 +27,6 @@ vimgrepk() {
     vim $(grepk "$*" |sed -e "s/:.*//g"|uniq)
 }
 
+vimOgrepk() {
+    vim -O $(grepk "$*" |sed -e "s/:.*//g"|uniq)
+}

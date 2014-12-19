@@ -21,5 +21,3 @@ for f in cows vimrc bashrc bash_aliases profile gitconfig gitignore; do
 done
 rm -v ~/.config/liquidpromptrc
 ln -vs $PWD/liquidpromptrc ~/.config/liquidpromptrc
-
-

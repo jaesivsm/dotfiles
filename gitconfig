@@ -1,17 +1,18 @@
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+    diff = auto
+    status = auto
+    branch = auto
 [alias]
-	ci = commit
-	co = checkout
-	st = status
-	br = branch
+    ci = commit
+    co = checkout
+    st = status
+    br = branch
+    wave = log --oneline --decorate --graph --color
 [user]
-	name = François Schmidts
-	email = francois.schmidts@gmail.com
+    name = François Schmidts
+    email = francois.schmidts@gmail.com
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim
-[push]
-	default = simple
+    excludesfile = ~/.gitignore
+    editor = vim
+#[push]
+#    default = simple
