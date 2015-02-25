@@ -1,9 +1,27 @@
 [submodule "liquidprompt"]
 	path = liquidprompt
 	url = git@github.com:jaesivsm/liquidprompt.git
-[submodule "ropevim"]
-	path = ropevim
-	url = https://github.com/python-rope/ropevim.git
 [submodule "syntastic"]
 	path = syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "tlib_vim"]
+	path = tlib_vim
+	url = git@github.com:tomtom/tlib_vim.git
+[submodule "vim-addon-mw-utils"]
+	path = vim-addon-mw-utils
+	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
+[submodule "vim-colors-solarized"]
+	path = vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git
+[submodule "vim-fugitive"]
+	path = vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule "vim-sleuth"]
+	path = vim-sleuth
+	url = git@github.com:tpope/vim-sleuth.git
+[submodule "ctrlp.vim"]
+	path = ctrlp.vim
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "pydoc.vim"]
+	path = pydoc.vim
+	url = git@github.com:fs111/pydoc.vim.git

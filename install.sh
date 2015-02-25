@@ -1,6 +1,6 @@
 #!/bin/bash
 rm -rf ~/.vim ~/.bash_prompt
-mkdir -p ~/.vim/autoload ~/.vim/bundle
+mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/after
 
 echo "### installing pathogen"
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -11,8 +11,11 @@ git submodule update
 
 echo "### linking submodules"
 ln -vs $PWD/liquidprompt/liquidprompt ~/.bash_prompt
-ln -vs $PWD/syntastic ~/.vim/bundle/syntastic
-ln -vs $PWD/ropevim ~/.vim/bundle/ropevim
+for vim_addon in syntastic ctrlp.vim tlib_vim vim-addon-mw-utils vim-colors-solarized vim-fugitive vim-sleuth; do
+    ln -vs $PWD/$vim_addon ~/.vim/bundle/$vim_addon
+done
+ln -vs $PWD/pydoc.vim ~/.vim/after/pydoc.vim
+
 
 echo "### linking conf files"
 for f in cows vimrc bashrc bash_aliases profile gitconfig gitignore; do

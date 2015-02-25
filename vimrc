@@ -92,10 +92,6 @@ set grepprg=ack         " replace the default grep program with ack
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
-" Disable the colorcolumn when switching modes.  Make sure this is the
-" first autocmd for the filetype here
-"autocmd FileType * setlocal colorcolumn=0
-
 """ Insert completion
 " don't select first item, follow typing in autocomplete
 set completeopt=menuone,longest,preview
@@ -170,6 +166,7 @@ if has("gui_running")
 endif
 
 colorscheme default
+let g:solarized_termcolors=256
 
 " Paste from clipboard
 map <leader>p "+p
@@ -215,7 +212,9 @@ au FileType coffee setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 smart
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
-let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_python_python_exec = '/usr/bin/python3.4'
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+let g:syntastic_python_pep8_args='--ignore E126,E127,E128,E302'
 let g:syntastic_check_on_open = 1
 let g:syntastic_always_populate_loc_list = 1
 map <leader>e :lnext<CR>
@@ -223,6 +222,8 @@ map <leader>e :lnext<CR>
 let g:ropevim_vim_completion=1
 let g:ropevim_extended_complete=1
 let g:ropevim_autoimport_modules = ["os", "shutil"]
+
+nmap ; :CtrlPBuffer<CR>
 
 " Add the virtualenv's site-packages to vim path
 if has('python')

@@ -7,20 +7,18 @@ alias ll='ls -lh'
 alias lla='ls -lhA'
 alias lg='ls -A | grep'
 alias llg='ls -lhA | grep'
-alias clean='find . \( -name "*.pyc" -o -name "*~" \) -delete'
+alias clean='find . \( -name "*.pyc" -o -name "*~" \) -delete; git clean -fd 2> /dev/null'
 alias serv='python -m SimpleHTTPServer'
 alias rsync='rsync --exclude="*.o" --exclude="*.so" --exclude="*~" --exclude="*.swp" --exclude="*.pyc" --exclude=".git/*"'
-
-bim() {
-    echo "BIM $@ !"
-}
+alias bim="echo 'BIM !!!'"
+alias wo="pew workon"
 
 grepk() {
-	grep -ER --binary-files=without-match --exclude-dir=".webassets-cache" --exclude-dir=".git" --exclude-dir="venv" --exclude-dir="build" --exclude-dir="static" --exclude-dir="site-packages" --exclude-dir="gen"  --exclude="*~" --exclude="*.pyc" --exclude="*.min.js" --exclude="*.swp" "$*" .
+    grep -ER --binary-files=without-match --exclude-dir=".webassets-cache" --exclude-dir=".git" --exclude-dir="venv" --exclude-dir="build" --exclude-dir="static" --exclude-dir="site-packages" --exclude-dir="gen"  --exclude="*~" --exclude="*.pyc" --exclude="*.min.js" --exclude="*.swp" "$*" .
 }
 # Chercher dans les process et non pas le club de foot
 psg() {
-	ps aux |  sed -e "/grep --color=auto $1/d" | grep "$*"
+    ps aux |  sed -e "/grep --color=auto $1/d" | grep "$*"
 }
 
 vimgrepk() {
