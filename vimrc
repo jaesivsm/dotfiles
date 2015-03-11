@@ -69,6 +69,7 @@ execute pathogen#infect()
 " ==========================================================
 syntax on                     " syntax highlighing
 filetype on                   " try to detect filetypes
+filetype plugin on
 filetype plugin indent on     " enable loading indent file for filetype
 "set number                    " Display line numbers
 "set numberwidth=1             " using only 1 column (and 1 space) while possible
@@ -224,25 +225,6 @@ let g:ropevim_extended_complete=1
 let g:ropevim_autoimport_modules = ["os", "shutil"]
 
 nmap ; :CtrlPBuffer<CR>
-
-" Add the virtualenv's site-packages to vim path
-if has('python')
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
-endif
-
-" Load up virtualenv's vimrc if it exists
-if filereadable($VIRTUAL_ENV . '/.vimrc')
-    source $VIRTUAL_ENV/.vimrc
-endif
 
 if exists("&colorcolumn")
     au FileType python set colorcolumn=80
