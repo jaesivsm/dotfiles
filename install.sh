@@ -11,7 +11,7 @@ git submodule update
 
 echo "### linking submodules"
 ln -vs $PWD/liquidprompt/liquidprompt ~/.bash_prompt
-for vim_addon in pyflakes-vim syntastic ctrlp.vim tlib_vim vim-addon-mw-utils vim-colors-solarized vim-fugitive vim-sleuth; do
+for vim_addon in pyflakes-vim syntastic ctrlp.vim tlib_vim vim-addon-mw-utils vim-colors-solarized vim-fugitive; do
     ln -vs $PWD/$vim_addon ~/.vim/bundle/$vim_addon
 done
 ln -vs $PWD/pydoc.vim ~/.vim/after/pydoc.vim
