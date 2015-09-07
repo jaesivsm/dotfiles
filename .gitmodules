@@ -24,4 +24,7 @@
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "pydoc.vim"]
 	path = pydoc.vim
-	url = https://github.com/fs111/pydoc.vim.git
+    url = https://github.com/fs111/pydoc.vim.git
+[submodule "pyflakes-vim"]
+    path = pyflakes-vim
+    url = https://github.com/kevinw/pyflakes-vim.git

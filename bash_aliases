@@ -12,9 +12,12 @@ alias serv='python -m SimpleHTTPServer'
 alias rsync='rsync --exclude="*.o" --exclude="*.so" --exclude="*~" --exclude="*.swp" --exclude="*.pyc" --exclude=".git/*"'
 alias bim="echo 'BIM !!!'"
 alias wo="pew workon"
+alias vul="vim"
+alias voù="vim"
+alias cim="vim"
 
 grepk() {
-    grep -iER --binary-files=without-match --exclude-dir=".webassets-cache" --exclude-dir=".git" --exclude-dir="venv" --exclude-dir="build" --exclude-dir="static" --exclude-dir="site-packages" --exclude-dir="gen"  --exclude="*~" --exclude="*.pyc" --exclude="*.min.js" --exclude="*.swp" "$*" .
+    grep -ER --binary-files=without-match --exclude-dir=".webassets-cache" --exclude-dir=".git" --exclude-dir="venv" --exclude-dir="build" --exclude-dir="static" --exclude-dir="site-packages" --exclude-dir="gen"  --exclude="*~" --exclude="*.pyc" --exclude="*.min.js" --exclude="*.swp" "$*" .
 }
 # Chercher dans les process et non pas le club de foot
 psg() {

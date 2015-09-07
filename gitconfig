@@ -2,6 +2,22 @@
     diff = auto
     status = auto
     branch = auto
+    ui = true
+[color "status"]
+    header    = white
+    added     = green
+    changed   = red
+    untracked = yellow
+    branch    = bold white
+    # never seen
+    nobranch  = reverse magenta
+[color "branch"]
+    current  = reverse green
+    local    = white
+    remote   = cyan
+    upstream = cyan
+    # never seen
+    plain    = reverse cyan
 [alias]
     ci = commit
     co = checkout
@@ -10,7 +26,7 @@
     wave = log --decorate --graph --color --oneline
     graph = log --decorate --graph --color
 [user]
-    name = François Schmidts
+	name = François Schmidts\n
     email = francois.schmidts@gmail.com
 [core]
     excludesfile = ~/.gitignore

@@ -211,11 +211,9 @@ au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au FileType coffee setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-" Don't let pyflakes use the quickfix window
-let g:pyflakes_use_quickfix = 0
 let g:syntastic_python_python_exec = '/usr/bin/python3.4'
-let g:syntastic_python_checkers = ['pyflakes3', 'pep8']
-let g:syntastic_python_pep8_args='--ignore E126,E127,E128,E302'
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+let g:syntastic_python_pep8_args = '--ignore E126,E127,E128,E302'
 let g:syntastic_check_on_open = 1
 let g:syntastic_always_populate_loc_list = 1
 map <leader>e :lnext<CR>
