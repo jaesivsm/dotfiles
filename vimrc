@@ -213,7 +213,7 @@ au FileType coffee setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 smart
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 let g:syntastic_python_python_exec = '/usr/bin/python3.4'
 let g:syntastic_python_checkers = ['pyflakes', 'pep8']
-let g:syntastic_python_pep8_args = '--ignore E126,E127,E128,E302'
+let g:syntastic_python_pep8_args = '--ignore=E126,E127,E128,E302,E402,E712,W503'
 let g:syntastic_check_on_open = 1
 let g:syntastic_always_populate_loc_list = 1
 map <leader>e :lnext<CR>
