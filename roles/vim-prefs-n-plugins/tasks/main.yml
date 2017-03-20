@@ -1,0 +1,21 @@
+- name: 'ensuring directories'
+  file:
+    dest: "{{ item }}"
+    state: directory 
+  with_items:
+    - ~/.vim/autoload
+    - ~/.vim/bundle
+    - ~/.vim/after 
+
+- name: 'vim plugins'
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - pyflakes-vim 
+    - syntastic 
+    - ctrlp.vim 
+    - tlib_vim 
+    - vim-addon-mw-utils 
+    - vim-colors-solarized 
+    - vim-fugitive
