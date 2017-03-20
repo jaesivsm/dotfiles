@@ -1,21 +1,40 @@
 - name: 'ensuring directories'
   file:
     dest: "{{ item }}"
-    state: directory 
+    state: directory
   with_items:
     - ~/.vim/autoload
     - ~/.vim/bundle
-    - ~/.vim/after 
+    - ~/.vim/after
 
-- name: 'vim plugins'
-  copy:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
+- name: 'copy vim conf'
+  synchronize:
+    src: files/vim/vimrc
+    dest: ~/.vimrc
+
+- name: 'installing pathogen'
+  synchronize:
+    src: "files/vim/pathogen/autoload/pathogen.vim"
+    dest: "~/.vim/autoload/pathogen.vim"
+
+- name: 'installing various vim plugins'
+  synchronize:
+    src: "files/vim/{{ item.name }}/"
+    dest: "~/.vim/{{ item.type }}/{{ item.name }}/"
+    rsync_opts:
+      - "--exclude=.git"
+      - "--exclude=doc"
+      - "--exclude=sample"
+      - "--exclude=tests"
+      - "--exclude=*.md"
+      - "--exclude=*.TXT"
+      - "--exclude=README"
   with_items:
-    - pyflakes-vim 
-    - syntastic 
-    - ctrlp.vim 
-    - tlib_vim 
-    - vim-addon-mw-utils 
-    - vim-colors-solarized 
-    - vim-fugitive
+    - {name: pyflakes-vim, type: bundle}
+    - {name: syntastic, type: bundle}
+    - {name: ctrlp.vim, type: bundle}
+    - {name: tlib_vim, type: bundle}
+    - {name: vim-addon-mw-utils, type: bundle}
+    - {name: vim-colors-solarized, type: bundle}
+    - {name: vim-fugitive, type: bundle}
+    - {name: pydoc.vim, type: after}

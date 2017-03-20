@@ -1,30 +1,29 @@
 - name: 'ensuring directories'
   file:
     dest: "{{ item }}"
-    state: directory 
-    owner: "{{ user }}"
-    group: "{{ group }}"
+    state: directory
   with_items:
-    - ~/.config/
+    - ~/.config
+    - ~/.cows
 
 - name: 'copying bash files'
-  file:
+  synchronize:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
     - src: files/bash/bashrc
       dest: ~/.bashrc
-    - src: files/bash/gitconfig
-      dest: ~/.gitconfig
-    - src: files/bash/gitignore
-      dest: ~/.gitignore
     - src: files/bash/bash_aliases
-      dest: ~/.bash_aliases}
+      dest: ~/.bash_aliases
     - src: files/bash/profile
       dest: ~/.profile
     - src: files/bash/liquidpromptrc
       dest: ~/.config/liquidpromptrc
-    - src: files/bash/liquidprompt/liquidprompt 
-      dest: ~/.bash_prompt 
-    - src: files/bash/cows
-      dest: ~/.cows 
+    - src: files/bash/liquidprompt/liquidprompt
+      dest: ~/.bash_prompt
+    - src: files/bash/cows/
+      dest: ~/.cows/
+    - src: files/git/gitconfig
+      dest: ~/.gitconfig
+    - src: files/git/gitignore
+      dest: ~/.gitignore
