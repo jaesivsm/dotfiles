@@ -2,9 +2,11 @@
   file:
     dest: "{{ item }}"
     state: directory
+    owner: "{{ user }}"
+    group: "{{ group }}"
   with_items:
-    - ~/.config
-    - ~/.cows
+    - "{{ home }}/.config"
+    - "{{ home }}/.cows"
 
 - name: 'copying bash files'
   synchronize:
@@ -12,18 +14,18 @@
     dest: "{{ item.dest }}"
   with_items:
     - src: files/bash/bashrc
-      dest: ~/.bashrc
+      dest: "{{ home }}/.bashrc"
     - src: files/bash/bash_aliases
-      dest: ~/.bash_aliases
+      dest: "{{ home }}/.bash_aliases"
     - src: files/bash/profile
-      dest: ~/.profile
+      dest: "{{ home }}/.profile"
     - src: files/bash/liquidpromptrc
-      dest: ~/.config/liquidpromptrc
+      dest: "{{ home }}/.config/liquidpromptrc"
     - src: files/bash/liquidprompt/liquidprompt
-      dest: ~/.bash_prompt
+      dest: "{{ home }}/.bash_prompt"
     - src: files/bash/cows/
-      dest: ~/.cows/
+      dest: "{{ home }}/.cows/"
     - src: files/git/gitconfig
-      dest: ~/.gitconfig
+      dest: "{{ home }}/.gitconfig"
     - src: files/git/gitignore
-      dest: ~/.gitignore
+      dest: "{{ home }}/.gitignore"

@@ -1,4 +1,20 @@
-- hosts: localhost
+- hosts: localhost with_jaes
+  vars:
+    user: jaes
+    group: jaes
+    home: /home/jaes
   roles:
     - bash-prefs
     - vim-prefs-n-plugins
+
+#- hosts: with_root
+#  vars:
+#    user: root
+#    group: root
+#    home: /root
+#  roles:
+#    - bash-prefs
+#    - vim-prefs-n-plugins
+#  become: true
+#  become_user: root
+#  become_method: su

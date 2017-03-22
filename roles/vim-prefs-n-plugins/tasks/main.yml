@@ -2,25 +2,28 @@
   file:
     dest: "{{ item }}"
     state: directory
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    force: true
   with_items:
-    - ~/.vim/autoload
-    - ~/.vim/bundle
-    - ~/.vim/after
+    - "{{ home }}/.vim/autoload"
+    - "{{ home }}/.vim/bundle"
+    - "{{ home }}/.vim/after"
 
 - name: 'copy vim conf'
   synchronize:
     src: files/vim/vimrc
-    dest: ~/.vimrc
+    dest: "{{ home }}/.vimrc"
 
 - name: 'installing pathogen'
   synchronize:
     src: "files/vim/pathogen/autoload/pathogen.vim"
-    dest: "~/.vim/autoload/pathogen.vim"
+    dest: "{{ home }}/.vim/autoload/pathogen.vim"
 
 - name: 'installing various vim plugins'
   synchronize:
-    src: "files/vim/{{ item.name }}/"
-    dest: "~/.vim/{{ item.type }}/{{ item.name }}/"
+    src: "files/vim/{{ item.name|dirname }}/"
+    dest: "{{ home }}/.vim/{{ item.type }}/{{ item.name }}/"
     rsync_opts:
       - "--exclude=.git"
       - "--exclude=doc"
