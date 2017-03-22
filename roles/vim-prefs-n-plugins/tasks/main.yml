@@ -14,16 +14,46 @@
   synchronize:
     src: files/vim/vimrc
     dest: "{{ home }}/.vimrc"
+    archive: True
+    delete: True
+    owner: False
+    group: False
+    rsync_path: >-
+      {%- if become == True -%}
+        sudo rsync
+      {%- else -%}
+        rsync
+      {%- endif -%}
 
 - name: 'installing pathogen'
   synchronize:
     src: "files/vim/pathogen/autoload/pathogen.vim"
     dest: "{{ home }}/.vim/autoload/pathogen.vim"
+    archive: True
+    delete: True
+    owner: False
+    group: False
+    rsync_path: >-
+      {%- if become == True -%}
+        sudo rsync
+      {%- else -%}
+        rsync
+      {%- endif -%}
 
 - name: 'installing various vim plugins'
   synchronize:
     src: "files/vim/{{ item.name|dirname }}/"
     dest: "{{ home }}/.vim/{{ item.type }}/{{ item.name }}/"
+    archive: True
+    delete: True
+    owner: False
+    group: False
+    rsync_path: >-
+      {%- if become == True -%}
+        sudo rsync
+      {%- else -%}
+        rsync
+      {%- endif -%}
     rsync_opts:
       - "--exclude=.git"
       - "--exclude=doc"

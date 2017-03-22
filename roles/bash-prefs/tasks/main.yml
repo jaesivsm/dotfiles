@@ -12,6 +12,16 @@
   synchronize:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
+    archive: True
+    delete: True
+    owner: False
+    group: False
+    rsync_path: >-
+      {%- if become == True -%}
+        sudo rsync
+      {%- else -%}
+        rsync
+      {%- endif -%}
   with_items:
     - src: files/bash/bashrc
       dest: "{{ home }}/.bashrc"

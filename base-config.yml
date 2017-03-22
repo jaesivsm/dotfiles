@@ -3,18 +3,33 @@
     user: jaes
     group: jaes
     home: /home/jaes
+    become: False
   roles:
     - bash-prefs
     - vim-prefs-n-plugins
 
-#- hosts: with_root
-#  vars:
-#    user: root
-#    group: root
-#    home: /root
-#  roles:
-#    - bash-prefs
-#    - vim-prefs-n-plugins
-#  become: true
-#  become_user: root
-#  become_method: su
+- hosts: with_root
+  vars:
+    user: root
+    group: root
+    home: /root
+    become: True
+  roles:
+    - bash-prefs
+    - vim-prefs-n-plugins
+  become: true
+  become_user: root
+  become_method: sudo
+
+- hosts: with_www
+  vars:
+    user: www-data
+    group: www-data
+    home: /srv/http
+    become: True
+  roles:
+    - bash-prefs
+    - vim-prefs-n-plugins
+  become: true
+  become_user: www-data
+  become_method: sudo
