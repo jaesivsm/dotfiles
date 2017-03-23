@@ -1,4 +1,4 @@
-- hosts: localhost with_jaes
+- hosts: with_jaes
   vars:
     user: jaes
     group: jaes
@@ -32,4 +32,17 @@
     - vim-prefs-n-plugins
   become: true
   become_user: www-data
+  become_method: sudo
+
+- hosts: with_modoboa
+  vars:
+    user: modoboa
+    group: modoboa
+    home: /srv/modoboa
+    become: True
+  roles:
+    - bash-prefs
+    - vim-prefs-n-plugins
+  become: true
+  become_user: modoboa
   become_method: sudo
