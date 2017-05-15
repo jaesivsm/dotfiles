@@ -1,35 +1,35 @@
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = true
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
 [color "status"]
-    header    = white
-    added     = green
-    changed   = red
-    untracked = yellow
-    branch    = bold white
-    # never seen
-    nobranch  = reverse magenta
+	header = white
+	added = green
+	changed = red
+	untracked	= yellow
+	branch = bold white
+	nobranch	= reverse magenta
 [color "branch"]
-    current  = reverse green
-    local    = white
-    remote   = cyan
-    upstream = cyan
-    # never seen
-    plain    = reverse cyan
+	current = reverse green
+	local = white
+	remote = cyan
+	upstream = cyan
+	plain = reverse cyan
 [alias]
-    ci = commit
-    co = checkout
-    st = status
-    br = branch
-    wave = log --decorate --graph --color --oneline
-    graph = log --decorate --graph --color
+	ci = commit
+	co = checkout
+	st = status
+	br = branch
+	wave = log --decorate --graph --color --oneline
+	graph = log --decorate --graph --color
 [user]
 	name = François Schmidts
-    email = francois.schmidts@gmail.com
+	email = francois.schmidts@gmail.com
 [core]
-    excludesfile = ~/.gitignore
-    editor = vim
+	excludesfile = ~/.gitignore
+	editor = vim
 [push]
-    default = simple
+	default	= simple
+[log]
+	date = iso
