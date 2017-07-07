@@ -1,0 +1,4 @@
+- include: install-dotfiles-for-user.yml
+  with_items: "{{ parsed_users }}"
+  loop_control:
+    loop_var: dotfile_user

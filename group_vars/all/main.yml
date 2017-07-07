@@ -1,0 +1,2 @@
+dotfile_users: jaes,root,www-data,modoboa,share
+parsed_users: "{{ dotfile_users.split(',')|list }}"

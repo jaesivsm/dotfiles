@@ -2,7 +2,7 @@
   file:
     dest: "{{ item }}"
     state: directory
-    owner: "{{ user }}"
+    owner: "{{ dotfile_user }}"
     group: "{{ group }}"
     force: true
   with_items:

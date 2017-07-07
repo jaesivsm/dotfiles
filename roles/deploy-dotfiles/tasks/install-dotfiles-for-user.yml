@@ -1,0 +1,32 @@
+- name: "testing if {{ dotfile_user }} exists"
+  command: "grep ^{{ dotfile_user }} /etc/passwd"
+  register: user_grep
+  failed_when: "user_grep.stderr"
+  changed_when: False
+
+- name: gathering group info
+  command: "grep :{{ user_grep.stdout.split(':')[3] }}: /etc/group"
+  register: group_grep
+  failed_when: "user_grep.stderr"
+  when: user_grep.rc != 1
+  changed_when: False
+
+- include: bash-prefs.yml
+  vars:
+    group: "{{ group_grep.stdout.split(':')[0] }}"
+    home: "{{ user_grep.stdout.split(':')[5] }}"
+    become: "{% if dotfile_user != ansible_user %}True{% else %}False{% endif %}"
+  become: "{% if dotfile_user != ansible_user %}True{% else %}False{% endif %}"
+  become_user: "{{ dotfile_user }}"
+  become_method: sudo
+  when: user_grep.rc != 1
+
+- include: vim-prefs-n-plugins.yml
+  vars:
+    group: "{{ group_grep.stdout.split(':')[0] }}"
+    home: "{{ user_grep.stdout.split(':')[5] }}"
+    become: "{% if dotfile_user != ansible_user %}True{% else %}False{% endif %}"
+  become: "{% if dotfile_user != ansible_user %}True{% else %}False{% endif %}"
+  become_user: "{{ dotfile_user }}"
+  become_method: sudo
+  when: user_grep.rc != 1
