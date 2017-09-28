@@ -11,7 +11,7 @@
   when: user_grep.rc != 1
   changed_when: False
 
-- include: bash-prefs.yml
+- include_tasks: bash-prefs.yml
   vars:
     group: "{{ group_grep.stdout.split(':')[0] }}"
     home: "{{ user_grep.stdout.split(':')[5] }}"
@@ -21,7 +21,7 @@
   become_method: sudo
   when: user_grep.rc != 1
 
-- include: vim-prefs-n-plugins.yml
+- include_tasks: vim-prefs-n-plugins.yml
   vars:
     group: "{{ group_grep.stdout.split(':')[0] }}"
     home: "{{ user_grep.stdout.split(':')[5] }}"
