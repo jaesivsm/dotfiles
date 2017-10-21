@@ -28,9 +28,3 @@
 [submodule "pyflakes-vim"]
     path = pyflakes-vim
     url = https://github.com/kevinw/pyflakes-vim.git
-[submodule "pyflakes3-vim"]
-	path = files/vim/pyflakes-vim
-	url = git@github.com:mathieui/pyflakes3-vim.git
-[submodule "files/vim/pathogen"]
-	path = files/vim/pathogen
-	url = https://github.com/tpope/vim-pathogen.git

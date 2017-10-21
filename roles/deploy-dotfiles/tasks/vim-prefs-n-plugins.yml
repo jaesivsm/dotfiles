@@ -26,24 +26,14 @@
       {%- endif -%}
 
 - name: 'installing pathogen'
-  synchronize:
-    src: "files/vim/pathogen/autoload/pathogen.vim"
+  get_url:
+    url: https://tpo.pe/pathogen.vim
     dest: "{{ home }}/.vim/autoload/pathogen.vim"
-    archive: True
-    delete: True
-    owner: False
-    group: False
-    rsync_path: >-
-      {%- if become == True -%}
-        sudo rsync
-      {%- else -%}
-        rsync
-      {%- endif -%}
 
 - name: 'installing various vim plugins'
   synchronize:
     src: "files/vim/{{ item.name|dirname }}/"
-    dest: "{{ home }}/.vim/{{ item.type }}/{{ item.name }}/"
+    dest: "{{ home }}/.vim/{{ item.type }}/"
     archive: True
     delete: True
     owner: False
@@ -54,16 +44,7 @@
       {%- else -%}
         rsync
       {%- endif -%}
-    rsync_opts:
-      - "--exclude=.git"
-      - "--exclude=doc"
-      - "--exclude=sample"
-      - "--exclude=tests"
-      - "--exclude=*.md"
-      - "--exclude=*.TXT"
-      - "--exclude=README"
   with_items:
-    - {name: pyflakes-vim, type: bundle}
     - {name: syntastic, type: bundle}
     - {name: ctrlp.vim, type: bundle}
     - {name: tlib_vim, type: bundle}
