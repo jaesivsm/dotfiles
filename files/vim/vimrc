@@ -211,18 +211,13 @@ au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au FileType coffee setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_pylint_args = "-d C0330,C0111,C0103,W0703,R0801"
+let g:syntastic_python_pylint_args = '-d I0011,R0901,R0902,R0801,C0111,C0103,C0411,C0330,R0903,R0913,R0914,R0915,W0613,W0703'
 map <leader>e :lnext<CR>
 
 let g:ropevim_vim_completion=1
