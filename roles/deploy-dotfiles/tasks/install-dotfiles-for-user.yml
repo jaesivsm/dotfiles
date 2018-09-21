@@ -7,7 +7,7 @@
 - name: gathering group info
   command: "grep :{{ user_grep.stdout.split(':')[3] }}: /etc/group"
   register: group_grep
-  failed_when: "user_grep.stderr"
+  failed_when: "group_grep.stderr"
   when: user_grep.rc != 1
   changed_when: False
 
