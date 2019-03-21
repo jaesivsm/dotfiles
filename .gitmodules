@@ -17,7 +17,7 @@
 	path = files/vim/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim-sleuth"]
-	path = vim-sleuth
+	path = files/vim/sleuth
 	url = https://github.com/tpope/vim-sleuth.git
 [submodule "ctrlp.vim"]
 	path = files/vim/ctrlp.vim
@@ -26,5 +26,5 @@
 	path = files/vim/pydoc.vim
     url = https://github.com/fs111/pydoc.vim.git
 [submodule "pyflakes-vim"]
-    path = pyflakes-vim
+    path = files/vim/pyflakes
     url = https://github.com/kevinw/pyflakes-vim.git

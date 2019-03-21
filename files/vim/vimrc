@@ -201,6 +201,8 @@ let g:acp_completeoptPreview=1
 "
 " Color SQL temp file when you edit a command with /e
 autocmd BufRead /tmp/sql* set filetype=sql
+autocmd BufRead *.alerts set filetype=yaml
+autocmd BufRead *.rules set filetype=yaml
 " Mako/HTML
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
 autocmd FileType Javascript,html,xhtml,xml,css,yaml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
