@@ -16,9 +16,8 @@
     group: "{{ group_grep.stdout.split(':')[0] }}"
     home: "{{ user_grep.stdout.split(':')[5] }}"
     become: "{% if dotfile_user != ansible_user %}True{% else %}False{% endif %}"
-  become: "{% if dotfile_user != ansible_user %}True{% else %}False{% endif %}"
-  become_user: "{{ dotfile_user }}"
-  become_method: sudo
+    become_user: "{{ dotfile_user }}"
+    become_method: sudo
   when: user_grep.rc != 1
 
 - include_tasks: vim-prefs-n-plugins.yml
@@ -26,7 +25,6 @@
     group: "{{ group_grep.stdout.split(':')[0] }}"
     home: "{{ user_grep.stdout.split(':')[5] }}"
     become: "{% if dotfile_user != ansible_user %}True{% else %}False{% endif %}"
-  become: "{% if dotfile_user != ansible_user %}True{% else %}False{% endif %}"
-  become_user: "{{ dotfile_user }}"
-  become_method: sudo
+    become_user: "{{ dotfile_user }}"
+    become_method: sudo
   when: user_grep.rc != 1

@@ -45,7 +45,7 @@
         rsync
       {%- endif -%}
   with_items:
-    - {name: syntastic, type: bundle}
+    - {name: ale, type: bundle}
     - {name: ctrlp.vim, type: bundle}
     - {name: tlib_vim, type: bundle}
     - {name: vim-addon-mw-utils, type: bundle}

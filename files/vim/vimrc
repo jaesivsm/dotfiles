@@ -213,14 +213,15 @@ au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au FileType coffee setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_pylint_args = '-d I0011,R0901,R0902,R0801,C0111,C0103,C0411,C0330,R0903,R0913,R0914,R0915,R1710,W0613,W0703'
-map <leader>e :lnext<CR>
+let g:ale_statusline_format = ['%d error(s)', '%d warning(s)', 'OK']
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_fixers = ['pylint']
+let g:ale_python_mypy_options = ''
+let g:ale_python_mypy_use_global = 0
+let g:ale_python_pylint_options = '-d I0011,R0901,R0902,R0801,C0111,C0103,C0411,C0330,R0903,R0913,R0914,R0915,R1710,W0613,W0703'
+let g:ale_python_mypy_options = '--ignore-missing-imports'
 
 let g:ropevim_vim_completion=1
 let g:ropevim_extended_complete=1
