@@ -28,3 +28,6 @@
 [submodule "files/vim/ale"]
 	path = files/vim/ale
 	url = https://github.com/dense-analysis/ale.git
+[submodule "files/vim/nord-vim"]
+	path = files/vim/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim.git

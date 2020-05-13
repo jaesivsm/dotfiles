@@ -7,6 +7,7 @@
   with_items:
     - "{{ home }}/.config"
     - "{{ home }}/.cows"
+    - "{{ home }}/.config/terminator"
 
 - name: 'copying bash files'
   synchronize:
@@ -39,3 +40,5 @@
       dest: "{{ home }}/.gitconfig"
     - src: files/git/gitignore
       dest: "{{ home }}/.gitignore"
+    - src: files/terminator
+      dest: "{{ home }}/.config/terminator/config"

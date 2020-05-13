@@ -1,0 +1,105 @@
+[global_config]
+  dbus = False
+  borderless = True
+  title_transmit_fg_color = "#2E3440"
+  title_transmit_bg_color = "#88C0D0"
+  title_receive_fg_color = "#2E3440"
+  title_receive_bg_color = "#8FBCBB"
+  title_inactive_fg_color = "#D8DEE9"
+  title_inactive_bg_color = "#4C566A"
+  inactive_color_offset = 0.916666666667
+  suppress_multiple_term_dialog = True
+[keybindings]
+  split_vert = <Primary><Shift>e
+[profiles]
+  [[default]]
+    allow_bold = False
+    background_color = "#2e3440"
+    cursor_color = "#D8DEE9"
+    font = Monospace 10
+    foreground_color = "#d8dee9"
+    scrollbar_position = hidden
+    palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8F  BCBB:#ECEFF4"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 317:91
+      maximised = False
+      fullscreen = False
+      size = 642, 429
+      title = /bin/bash
+      last_active_term = f731d19b-e410-46dd-aa92-4358c64365ae
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = default
+      uuid = f731d19b-e410-46dd-aa92-4358c64365ae
+  [[homes]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 50787fdd-b54b-453c-beb9-e448ba0d9da0
+      last_active_window = False
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:27
+      size = 2560, 1413
+      title = /bin/bash
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 704
+      ratio = 0.5
+      type = VPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 1278
+      ratio = 0.5
+      type = HPaned
+    [[[child5]]]
+      order = 1
+      parent = child1
+      position = 1278
+      ratio = 0.5
+      type = HPaned
+    [[[terminal3]]]
+      command = ssh trantor
+      group = homes
+      order = 0
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = d3fcd388-bc3f-40e6-b841-4f7dd51e4e9e
+    [[[terminal4]]]
+      command = ssh foshan
+      group = homes
+      order = 1
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = fb56ebed-e8f6-4b5e-9fe4-757ceace0482
+    [[[terminal6]]]
+      command = ssh metropolis
+      group = homes
+      order = 0
+      parent = child5
+      profile = default
+      type = Terminal
+      uuid = 69f04a31-e63a-43c3-9dce-9b9351cc9826
+    [[[terminal7]]]
+      command = ssh gotham
+      group = homes
+      order = 1
+      parent = child5
+      profile = default
+      type = Terminal
+      uuid = 50787fdd-b54b-453c-beb9-e448ba0d9da0
+[plugins]
