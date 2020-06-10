@@ -129,8 +129,6 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Delete whitespace at EOL when writing file
 autocmd BufWritePre * %s/\s\+$//e
-" Replace this "thing" : " " (not a fucking white space) by a true white space
-autocmd BufWritePre * %s/ / /e
 
 """" Reading/Writing
 set noautowrite             " Never write a file unless I request it.
