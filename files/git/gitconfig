@@ -26,6 +26,7 @@
 [user]
 	name = François Schmidts
 	email = francois@schmidts.fr
+	signingKey = 744C5E097D47168A20B52807FC2932C5B1A89FC8
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
