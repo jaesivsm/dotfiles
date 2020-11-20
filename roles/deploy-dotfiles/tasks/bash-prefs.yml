@@ -31,7 +31,7 @@
     - src: files/bash/profile
       dest: "{{ home }}/.profile"
     - src: files/bash/liquidpromptrc
-      dest: "{{ home }}/.config/liquidpromptrc"
+      dest: "{{ home }}/.liquidpromptrc"
     - src: files/bash/liquidprompt/liquidprompt
       dest: "{{ home }}/.bash_prompt"
     - src: files/bash/cows/
