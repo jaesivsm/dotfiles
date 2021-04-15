@@ -1,14 +1,17 @@
+INVENTORY := inventory.yml
 USER := $(shell whoami)
+PUSH = pipenv run ansible-playbook push-configs.yml -e dotfile_users=$(USER) -e ansible_user=$(USER) -i $(INVENTORY)
 
 install:
 	pipenv sync
 	git submodule update --init
 
-run-local:
-	pipenv run ansible-playbook push-configs.yml -e dotfile_users=$(USER) -i inventory-local.yml -e ansible_user=$(USER) --connection=local
-
 run-inventory:
-	pipenv run ansible-playbook push-configs.yml -e dotfile_users=$(USER) -i inventory.yml -e ansible_user=$(USER)
+	$(PUSH) -i inventory.yml
 
-run-other-user:
-	pipenv run ansible-playbook push-configs.yml -e dotfile_users=$(USER) -i inv.yml -e ansible_user=$(USER) --connection=local --become-method=sudo --become-user=$(USER) --become
+run-local-other-user:
+	$(PUSH) --connection=local --become-method=sudo --become-user=$(USER) --become
+
+run-local: INVENTORY = inventory-local.yml
+run-local:
+	$(PUSH) --connection=local
