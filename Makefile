@@ -10,6 +10,7 @@ install:
 run-inventory:
 	$(PUSH) -i inventory.yml --become-method=sudo --become-user=$(USER) --become
 
+run-local-other-user: INVENTORY = inventory-local.yml
 run-local-other-user:
 	$(PUSH) --connection=local --become-method=sudo --become-user=$(USER) --become
 
