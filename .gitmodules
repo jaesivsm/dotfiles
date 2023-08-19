@@ -21,10 +21,10 @@
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "pydoc.vim"]
 	path = files/vim/pydoc.vim
-    url = https://github.com/fs111/pydoc.vim.git
+	url = https://github.com/fs111/pydoc.vim.git
 [submodule "pyflakes-vim"]
-    path = files/vim/pyflakes
-    url = https://github.com/kevinw/pyflakes-vim.git
+	path = files/vim/pyflakes
+	url = https://github.com/kevinw/pyflakes-vim.git
 [submodule "files/vim/ale"]
 	path = files/vim/ale
 	url = https://github.com/dense-analysis/ale.git
