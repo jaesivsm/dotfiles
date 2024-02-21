@@ -8,10 +8,8 @@ alias lla='ls -lhA'
 alias lg='ls -A | grep'
 alias llg='ls -lhA | grep'
 alias clean='find . \( -name "*.pyc" -o -name "*~" \) -delete; git clean -fd 2> /dev/null'
-alias serv='python -m SimpleHTTPServer'
 alias rsync='rsync --exclude="*.o" --exclude="*.so" --exclude="*~" --exclude="*.swp" --exclude="*.pyc" --exclude=".git/*"'
 alias bim="echo 'BIM !!!'"
-alias wo="pew workon"
 alias vul="vim"
 alias voù="vim"
 alias cim="vim"
@@ -49,4 +47,13 @@ vimgrepk() {
 
 vimOgrepk() {
     vim -O $(grepk "$*" |sed -e "s/:.*//g"|uniq)
+}
+wo() {
+    cd ~/devel/$1/
+    has_src=$(test -d src)
+    if [ -f Pipfile ] && $has_src; then
+        pipenv shell cd src/
+    elif [ -f Pipfile ]; then
+        pipenv shell
+    fi
 }
